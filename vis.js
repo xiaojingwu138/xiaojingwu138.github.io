@@ -1,14 +1,16 @@
 
-// Retrieve the scenes
-var view1 = d3.select('#view1')
-var view2 = d3.select('#view2')
-var view3 = d3.select('#view2')
-
-const margin = { top:50, right: 50, bottom: 50, left: 50}
+const margin = { top:50, right: 100, bottom: 100, left: 100 }
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight-margin.top -margin.bottom;
 
+// Create the SVG element and append it to the chart container
+
+
+
+ 
 const parseDate = d3.timeParse("%Y-%m-%d");
+
+
 
 d3.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/rolling-averages/us-states.csv").then(function (data) {
 
@@ -21,7 +23,7 @@ data.forEach(d => {
   
 var allGroup = ["cases_avg_per_100", "deaths"]
 
-const svg = d3.select("#view1")
+const svg = d3.select("#chart-container")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -86,6 +88,17 @@ svg.append("g")
 //.call(g => g.select(".domain").remove()) 
 .selectAll(".tick text")
 .style("fill", "#777") 
+//.style("visibility", (d, i, nodes) => {
+ // if (i === 0) {
+   // return "hidden"; 
+  //} else {
+  //  return "visible"; 
+//  }
+//});
+  
+  
+  ///////////////////////
+
 
 
  // Add vertical gridlines
@@ -208,6 +221,3 @@ svg.append("text")
 
 
 })
-// --------------------------------------------------------------------------------// 
-// SCENE TWO ----------------------------------------------------------------------//
-// --------------------------------------------------------------------------------// 
