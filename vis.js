@@ -4,7 +4,7 @@ var view1 = d3.select('#view1')
 var view2 = d3.select('#view2')
 var view3 = d3.select('#view2')
 
-const margin = { top:50, right: 100, bottom: 100, left: 100 }
+const margin = { top:50, right: 50, bottom: 100, left: 50}
 const width = window.innerWidth;
 const height = window.innerHeight-margin.top -margin.bottom;
 
