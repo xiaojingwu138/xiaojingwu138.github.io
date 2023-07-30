@@ -6,7 +6,7 @@ var view3 = d3.select('#view2')
 
 const margin = { top:50, right: 50, bottom: 50, left: 50}
 const width = window.innerWidth;
-const height = window.innerHeight-margin.top -margin.bottom;
+const height = window.innerHeight;
 
 const parseDate = d3.timeParse("%Y-%m-%d");
 
